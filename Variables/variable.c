@@ -99,6 +99,7 @@ int main(){
 //		indice = - (pression - 940);
 
 	// expression conditionnelle
+	pression = 1040;
 	indice = (pression >= 1030) ? (pression / 10 - 103) : -(pression - 940);
 	printf("Indice : %d\n", indice);
 }
