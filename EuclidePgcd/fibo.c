@@ -18,6 +18,7 @@ int main(int argc, char* argv[]) {  //i.e string argv[]
 	}
 	unsigned int a = atoi(argv[1]);  // convertit du texte en nombre ou 0 si non interprétable
 	unsigned int b = atoi(argv[2]);
+	printf("Nombres reçus a=%u et b=%u\n", a,b);
 	if ((a==0) || (b==0)) {
 		printf("Le programme PGCD nécessite 2 entiers strictement positifs");
 		exit(-1);
