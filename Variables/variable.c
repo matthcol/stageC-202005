@@ -146,6 +146,31 @@ int main(){
 //	}
 //	printf("Nb : %f\n", nb2);
 //
+
+	// autres types entiers
+	unsigned int n = 3000000000;
+	printf("Entier non signé : %u %d %x\n", n, n, n);
+	int nn = -1294967296;
+	printf("Entier signé : %u %d %x\n", nn, nn, nn);
+	printf("Tailles des entiers (octets) : %d %d %d %d %d\n",
+			sizeof(char), sizeof(short), sizeof(int), sizeof(long), sizeof(long long));
+
+	for (int i = 1; i <= 10; i++) {
+		printf("%d ",i);
+	}
+	printf("\n");
+
+	for (int i = 1; i <= 10; i+=2) {
+		printf("%d ",i);
+	}
+	printf("\n");
+
+	for (int i = 10; i >= 0; i--) {
+		printf("%d ",i);
+	}
+	printf("\n");
+
+
 }
 
 
