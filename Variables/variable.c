@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 
 int main(){
 	// déclarations de variables
@@ -169,6 +170,39 @@ int main(){
 		printf("%d ",i);
 	}
 	printf("\n");
+
+	// Texte
+	char c = 'A';  // info 8 bits 0100 0001 => lettre A ou nombre 65
+				   // 128 premiers : ASCII
+				   // 128 suivants : régionalisés ISO-8859-1 (latin1), cp1252
+				   // moderne : unicode (UTF-8 : code 1 à 4 octets)
+	printf("Caractère : %c %d\n", c, c);
+	printf("Caractère d'après : %c %d\n", c+1, c+1);
+	for (char c=0; c<=126; c++){
+		printf("Lettre n°%d : %c\n", c, c);
+	}
+	// texte avec initialisation statique
+	char ville[] = "Toulouse";
+	printf("Ville : %s (%d)\n", ville, strlen(ville));
+	//
+	char ville2[30];
+	// ville2 = "Pau"; // interdit en affectation
+	ville2[0] = 'P';
+	ville2[1] = 'a';
+	ville2[2] = 'u';
+	ville2[3] = '\0'; // Pau\0???????????????????????????
+	printf("Ville : %s (%d)\n", ville2, strlen(ville2));
+
+	char ville3[30];
+	printf("Entrez la ville de vos rêves: ");
+	scanf("%s", ville3);
+	printf("Vous avez gagné un séjour à %s !\n", ville3);
+
+	int budget=0; // ??
+	printf("Quel est votre budget ?");
+	scanf("%d", &budget);   // &budget désigne l'adresse mémoire de la variable budget
+	printf("Pour un budget de %d vous pouvez aller à Singapour !\n", budget);
+	printf("Adresse %x vs valeur %d/%x\n", &budget, budget, budget);
 
 
 }
