@@ -99,9 +99,53 @@ int main(){
 //		indice = - (pression - 940);
 
 	// expression conditionnelle
-	pression = 1040;
+	pression = 1020;
 	indice = (pression >= 1030) ? (pression / 10 - 103) : -(pression - 940);
 	printf("Indice : %d\n", indice);
+
+	// boucles : for, while, do..while
+	int nb = 0;  // déclaration avec initialisation
+		// 10 5 2 1 0
+	int reste;
+		// 1 0 1 0 1
+	while (nb != 0) {
+		reste = nb % 2;
+		printf("%d", reste);
+		nb /= 2;
+	}
+	printf("\n");
+
+	nb = 0;  // 10 5 2 1 0
+	// reste; // 1 0 1 0 1
+	do {
+		reste = nb % 2;
+		printf("%d", reste);
+		nb /= 2;
+	} while (nb != 0);
+	printf("\n");
+
+
+//
+//	nb = 1;
+//	while (nb>0) {
+//		nb++;
+//	}
+//	printf("Nb : %d\n", nb);
+//
+//	// boucle infinie
+////	double nb2 = 1;
+////	while (nb2 > 0) {
+////		nb2++;
+////	}
+////	printf("Nb : %f\n", nb2);
+//
+//	// boucle potentiellement infinie mais dans laquelle on ne rentre pas
+//	double nb2 = -1;
+//	while (nb2 > 0) {
+//		nb2++;
+//	}
+//	printf("Nb : %f\n", nb2);
+//
 }
 
 
