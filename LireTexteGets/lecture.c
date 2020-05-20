@@ -12,5 +12,6 @@ int main() {
 	char ligne[255];
 	gets(ligne);
 	printf("Ligne lue <%s>\n", ligne);
+	return 0;
 }
 

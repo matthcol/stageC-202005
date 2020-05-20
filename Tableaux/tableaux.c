@@ -22,7 +22,7 @@ int main() {
 		printf("%.2f ", temperatures[i]);
 	}
 	printf("\n");
-	printf("Taille du tableau : %d octets\n", sizeof(temperatures));
+	printf("Taille du tableau : %I64d octets\n", sizeof(temperatures));
 
 	int pressions[] = {970, 980, 990, 1000, 1010, 1020, 1030, 1040};
 	int taille = 8;
@@ -79,13 +79,6 @@ int main() {
 	}
 	if (!found) printf("Valeur %f non trouvée\n", valeur);
 
-
-//	temperatures[0] = 15.0;
-//	temperatures[1] = 17.5;
-//	temperatures[2] = 25.25;
-//	temperatures[3] = 18.5;
-//	?? = ??
-//	??? = 25.5
-
+	return 0;
 }
 

@@ -11,4 +11,5 @@
 int main() {
 	// ceci est un bloc d'instructions
 	printf("Bonjour tout le monde !!!");
+	return 0;
 }

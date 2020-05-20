@@ -20,6 +20,7 @@ int main(){
 	// affectations
 	temperatureCelcius = 21.3; // affectation
 	pression = 1020; // 1020 est decomposé en base 2 (exact)
+	faitIlBeau = true;
 	// calculs
 	temperatureKelvin = temperatureCelcius + 273;
 	temperatureFahrenheit = (temperatureCelcius * 9 / 5.0) + 32;
@@ -68,9 +69,9 @@ int main(){
 		printf("Cas spécial 1021 HPa\n");
 	printf("Toujours fait\n");
 
-	// attention !!!!!
-	if (pression = 1022)  // affectation + test valant 1022 équivalent à vrai
-		printf("Cas spécial 1022 HPa\n");
+	// attention = vs == !!!!!
+//	if (pression = 1022)  // affectation + test valant 1022 équivalent à vrai
+//		printf("Cas spécial 1022 HPa\n");
 
 	if ((temperatureCelcius > 15) && (pression > 1000)) {
 		printf("Il fait bon\n");
@@ -103,6 +104,7 @@ int main(){
 	pression = 1020;
 	indice = (pression >= 1030) ? (pression / 10 - 103) : -(pression - 940);
 	printf("Indice : %d\n", indice);
+	printf("Fait il beau ? %d\n", faitIlBeau);
 
 	// boucles : for, while, do..while
 	int nb = 0;  // déclaration avec initialisation
@@ -153,7 +155,7 @@ int main(){
 	printf("Entier non signé : %u %d %x\n", n, n, n);
 	int nn = -1294967296;
 	printf("Entier signé : %u %d %x\n", nn, nn, nn);
-	printf("Tailles des entiers (octets) : %d %d %d %d %d\n",
+	printf("Tailles des entiers (octets) : %I64d %I64d %I64d %I64d %I64d\n",
 			sizeof(char), sizeof(short), sizeof(int), sizeof(long), sizeof(long long));
 
 	for (int i = 1; i <= 10; i++) {
@@ -183,7 +185,7 @@ int main(){
 	}
 	// texte avec initialisation statique
 	char ville[] = "Toulouse";
-	printf("Ville : %s (%d)\n", ville, strlen(ville));
+	printf("Ville : %s (%I64d)\n", ville, strlen(ville));
 	//
 	char ville2[30];
 	// ville2 = "Pau"; // interdit en affectation
@@ -191,15 +193,15 @@ int main(){
 	ville2[1] = 'a';
 	ville2[2] = 'u';
 	ville2[3] = '\0'; // Pau\0???????????????????????????
-	printf("Ville 2 : %s (%d)\n", ville2, strlen(ville2));
+	printf("Ville 2 : %s (%I64d)\n", ville2, strlen(ville2));
 
 	strcpy(ville2,"Meillon");
-	printf("Ville 2 : %s (%d)\n", ville2, strlen(ville2));
+	printf("Ville 2 : %s (%I64d)\n", ville2, strlen(ville2));
 
 	strcpy(ville2, ville);
 	ville[0] = 'Z';
-	printf("Ville : %s (%d)\n", ville, strlen(ville));
-	printf("Ville 2 : %s (%d)\n", ville2, strlen(ville2));
+	printf("Ville : %s (%I64d)\n", ville, strlen(ville));
+	printf("Ville 2 : %s (%I64d)\n", ville2, strlen(ville2));
 
 	// comparaisons de textes
 	// res<0 => texte1 < texte2
