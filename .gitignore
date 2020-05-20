@@ -1,0 +1,7 @@
+/.metadata/
+Debug/
+*.o
+*.exe
+.cproject
+.project
+.settings

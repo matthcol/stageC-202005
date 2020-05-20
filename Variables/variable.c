@@ -191,18 +191,54 @@ int main(){
 	ville2[1] = 'a';
 	ville2[2] = 'u';
 	ville2[3] = '\0'; // Pau\0???????????????????????????
-	printf("Ville : %s (%d)\n", ville2, strlen(ville2));
+	printf("Ville 2 : %s (%d)\n", ville2, strlen(ville2));
 
-	char ville3[30];
-	printf("Entrez la ville de vos rêves: ");
-	scanf("%s", ville3);
-	printf("Vous avez gagné un séjour à %s !\n", ville3);
+	strcpy(ville2,"Meillon");
+	printf("Ville 2 : %s (%d)\n", ville2, strlen(ville2));
 
-	int budget=0; // ??
-	printf("Quel est votre budget ?");
-	scanf("%d", &budget);   // &budget désigne l'adresse mémoire de la variable budget
-	printf("Pour un budget de %d vous pouvez aller à Singapour !\n", budget);
-	printf("Adresse %x vs valeur %d/%x\n", &budget, budget, budget);
+	strcpy(ville2, ville);
+	ville[0] = 'Z';
+	printf("Ville : %s (%d)\n", ville, strlen(ville));
+	printf("Ville 2 : %s (%d)\n", ville2, strlen(ville2));
+
+	// comparaisons de textes
+	// res<0 => texte1 < texte2
+	// res>0 => texte1 > texte2
+	// res==0 => texte1 == texte2
+	// res!=0 => texte1 != texte2
+	printf("comparaison texte : %d\n", strcmp("Meillon", "Toulouse")); // -1
+	printf("comparaison texte : %d\n", strcmp("meillon", "Toulouse")); // 1
+	printf("comparaison texte : %d\n", strcasecmp("meillon", "Toulouse")); // -7
+	printf("comparaison texte : %d\n", strcasecmp("toulon", "Toulouse")); // -7
+	printf("comparaison texte : %d\n", strcasecmp("toulon", "Toulouse")); // -7
+	printf("comparaison texte : %d\n", strcasecmp("nage", "nager")); // -114
+
+	strcpy(ville, "Toulouse");
+	strcpy(ville2, "Meillon");
+
+	if (strcmp(ville, ville2) < 0) {
+		printf("%s est plus petit que %s\n", ville,ville2);
+	} else {
+		printf("%s est plus grand ou égal que %s\n", ville,ville2);
+	}
+
+
+	printf("Avant concaténation <%s> et <%s>\n", ville, ville2);
+	// ville2 : Meillon\0??????????????????????
+	strcat(ville2, ville);
+	// ville2 : MeillonToulouse\0??????????????
+	printf("Après concaténation : <%s> et <%s>\n", ville, ville2);
+
+//	char ville3[30];
+//	printf("Entrez la ville de vos rêves: ");
+//	scanf("%s", ville3);
+//	printf("Vous avez gagné un séjour à %s !\n", ville3);
+//
+//	int budget=0; // ??
+//	printf("Quel est votre budget ?");
+//	scanf("%d", &budget);   // &budget désigne l'adresse mémoire de la variable budget
+//	printf("Pour un budget de %d vous pouvez aller à Singapour !\n", budget);
+//	printf("Adresse %x vs valeur %d/%x\n", &budget, budget, budget);
 
 
 }
